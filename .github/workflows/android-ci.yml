@@ -25,6 +25,9 @@ jobs:
           distribution: 'zulu'
           java-version: '17'
 
+      - name: Clean the project
+        run: ./gradlew clean
+
       - name: Build the Android app
         run: ./gradlew build
 
