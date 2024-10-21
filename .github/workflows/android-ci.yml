@@ -25,9 +25,6 @@ jobs:
           distribution: 'zulu'
           java-version: '17'
 
-      - name: Clean the project
-        run: ./gradlew clean
-
       - name: Build the Android app
         run: ./gradlew build
 
@@ -44,12 +41,15 @@ jobs:
       - name: Run unit tests
         run: ./gradlew test
 
-
       - name: Build the APK
         run: ./gradlew assembleDebug
 
+      - name: List APK files
+        run: ls -R app/build/outputs/apk/debug/
+
       - name: Upload APK artifact
-        uses: actions/upload-artifact@v4.4.3
+        uses: actions/upload-artifact@v3
         with:
-          name: cicd-debug.apk
-          path: app/build/outputs/apk/debug/cicd-debug.apk
+          name: debug-apk
+          path: app/build/outputs/apk/debug/*.apk
+
