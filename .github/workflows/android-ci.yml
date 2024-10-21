@@ -49,7 +49,7 @@ jobs:
         run: ./gradlew assembleDebug
 
       - name: Upload APK artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4.4.3
         with:
           name: cicd-debug.apk
           path: app/build/outputs/apk/debug/cicd-debug.apk
