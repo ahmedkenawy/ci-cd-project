@@ -43,7 +43,7 @@ jobs:
 
 
       - name: Build the APK
-        run: ./gradlew assembleRelease
+        run: ./gradlew assembleDebug
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v3
